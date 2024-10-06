@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+
 const staffData = [
   // Karachi Staff
   {
@@ -719,7 +719,7 @@ const staffData = [
 function Staff() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
-  const [filteredStaff, setFilteredStaff] = useState(staffData);
+  // const [filteredStaff, setFilteredStaff] = useState(staffData)
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
