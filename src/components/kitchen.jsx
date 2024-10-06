@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './kitchen.css';
-// import { Link } from 'react-router-dom';
 
 const Kitchen = () => {
+  const navigate = useNavigate(); // Hook for navigation
+
   const KitchenData = [
     {
       id: 1,
@@ -78,6 +80,11 @@ const Kitchen = () => {
     },
   ];
 
+  // Handle button click to navigate to the menu page with the selected category
+  const handleMenuClick = (category) => {
+    navigate(`/menu/${category}`, { state: { category } }); // Pass the selected category as a parameter and in the state
+  };
+
   return (
     <div className="container">
       <div className="menu-items">
@@ -86,7 +93,12 @@ const Kitchen = () => {
             <img src={item.image} alt={item.name} />
             <h2>{item.name}</h2>
             <p>{item.description}</p>
-            <button className="menu-button">Menu</button>
+            <button
+              className="menu-button"
+              onClick={() => handleMenuClick(item.name)}
+            >
+              Menu
+            </button>
           </div>
         ))}
       </div>

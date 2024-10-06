@@ -12,6 +12,8 @@ const App = () => {
     <>
       <Navbar />
       <Routes>
+        {/* <Route path="/" element={<Kitchen />} />x */}
+        <Route path="/menu/:category" element={<MenuComponent />} />
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<MenuComponent />} />
         <Route path="/staff" element={<Staff />} />
